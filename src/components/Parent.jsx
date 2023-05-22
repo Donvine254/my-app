@@ -28,7 +28,7 @@ const Parent = () => {
   const janeImage =
     "https://st3.depositphotos.com/1037987/15659/i/450/depositphotos_156592006-stock-photo-cute-baby-girl.jpg";
   function speak() {
-    var message = new SpeechSynthesisUtterance("Here, have some fruits");
+    let message = new SpeechSynthesisUtterance("Here, have some fruits");
     message.voice = speechSynthesis.getVoices().find(function (voice) {
       return voice.name === "Google UK English Female";
     });
