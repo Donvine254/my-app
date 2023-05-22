@@ -27,8 +27,15 @@ const Parent = () => {
     "https://media.istockphoto.com/id/507032033/photo/im-one-cute-baby.jpg?s=612x612&w=0&k=20&c=b_PRUOvU7729cnXh8Wd_UyVD4waDqg-1DDkB0VR2Z3U=";
   const janeImage =
     "https://st3.depositphotos.com/1037987/15659/i/450/depositphotos_156592006-stock-photo-cute-baby-girl.jpg";
-
+  function speak() {
+    var message = new SpeechSynthesisUtterance("Here, have some fruits");
+    message.voice = speechSynthesis.getVoices().find(function (voice) {
+      return voice.name === "Google UK English Female";
+    });
+    speechSynthesis.speak(message);
+  }
   const handleChildToParentCommunication = () => {
+    speak();
     setFruits((prevFruits) => prevFruits.slice(1)); // Remove the first fruit
   };
   const handleSiblingCommunication = (fruit) => {
@@ -36,8 +43,8 @@ const Parent = () => {
     setFruits(updatedFruits);
   };
   function handleResponse() {
-      setJaneResponse("no, ask mom!");
-      setJohnResponse("okay");
+    setJaneResponse("no, ask mom!");
+    setJohnResponse("okay");
   }
 
   return (

@@ -21,6 +21,7 @@ const Child = ({
     if (fruits.length > 1) {
       const siblingFruit = fruits[1];
       setChildFruits((prevChildFruits) => [...prevChildFruits, siblingFruit]);
+      // setChildFruits(childFruits.slice(1));
       handleSiblingCommunication(siblingFruit);
     }
     handleResponse();
